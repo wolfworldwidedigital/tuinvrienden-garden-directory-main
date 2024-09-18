@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dl-color-gray-500: #595959;
+  --dl-color-gray-700: #999999;
+  --dl-color-gray-900: #D9D9D9;
+  --dl-color-gray-black: #000000;
+  --dl-color-gray-white: #FFFFFF;
+  --dl-color-primary-100: rgb(248, 248, 248);
+  --dl-color-primary-500: rgb(0, 0, 0);
+  --dl-color-primary-700: #775860ff;
+  --dl-color-accent-500: #ffd700;
+  --dl-size-size-unit: 1rem;
+  --dl-size-size-halfunit: 0.5rem;
+  --dl-size-size-doubleunit: 2rem;
+  --dl-radius-radius-round: 50%;
+  --dl-radius-radius-radius4: 4px;
+  --dl-radius-radius-radius8: 8px;
+  --dl-space-space-unit: 1em;
+  --dl-space-space-halfunit: 0.5em;
+  --dl-space-space-doubleunit: 2em;
+  --dl-space-space-tripleunit: 3em;
+  --transition-speed: 0.3s;
+}
+
+body {
+  background-color: var(--dl-color-primary-100);
+  font-family: 'Poppins', sans-serif;
+}
+
+.button,
+.textarea,
+.input {
+  color: var(--dl-color-gray-black);
+  cursor: pointer;
+  padding: var(--dl-space-space-halfunit) var(--dl-space-space-unit);
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid var(--dl-color-gray-black);
+  border-radius: var(--dl-radius-radius-radius4);
+  background-color: var(--dl-color-gray-white);
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.button:hover {
+  background-color: var(--dl-color-primary-500);
+  color: var(--dl-color-gray-white);
+  transform: translateY(-0.1rem);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.textarea,
+.input:focus {
+  outline: none;
+  border-color: var(--dl-color-primary-500);
+}
+
+.button-primary {
+  background-color: var(--dl-color-primary-500);
+  color: var(--dl-color-gray-white);
+}
+
+.button-primary:hover {
+  background-color: var(--dl-color-primary-700);
+}
+
+.button-accent {
+  background-color: var(--dl-color-accent-500);
+  color: var(--dl-color-gray-black);
+  border-radius: var(--dl-radius-radius-round);
+}
+
+.button-accent:hover {
+  background-color: var(--dl-color-primary-500);
+  transform: scale(1.05);
+}
+
+.list-item {
+  display: list-item;
+  margin-bottom: var(--dl-space-space-halfunit);
+}
+
+.list {
+  width: 100%;
+  margin: var(--dl-space-space-unit) 0;
+  padding-left: var(--dl-space-space-unit);
+  list-style-type: none;
+  display: block;
+}
+
+.list-item::before {
+  content: '•';
+  color: var(--dl-color-primary-500);
+  margin-right: 0.5em;
+}
+
+.Heading {
+  @apply text-4xl font-extrabold tracking-wide;
+  color: var(--dl-color-gray-white);
+  text-transform: uppercase;
+  margin-bottom: var(--dl-space-space-doubleunit);
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.Subheading {
+  @apply text-lg font-light;
+  color: var(--dl-color-gray-500);
+  text-align: center;
+  margin-bottom: var(--dl-space-space-unit);
+}
+
+.Button {
+  @apply text-base font-semibold;
+}
+
+.Content {
+  @apply text-base font-normal leading-tight;
+  color: var(--dl-color-gray-700);
+  margin-bottom: var(--dl-space-space-unit);
+}
+
+.card {
+  @apply p-6 bg-white rounded-lg shadow-lg;
+  border: 1px solid var(--dl-color-gray-300);
+  transition: box-shadow var(--transition-speed), transform var(--transition-speed);
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-0.2rem);
+}
+
+.card h2 {
+  font-size: var(--dl-size-size-doubleunit);
+  color: var(--dl-color-primary-500);
+  margin-bottom: var(--dl-space-space-halfunit);
+}
+
+.card p {
+  font-size: var(--dl-size-size-unit);
+  color: var(--dl-color-gray-700);
+}
+
+.toastContainer {
+  background-color: var(--dl-color-primary-100);
+  color: var(--dl-color-gray-white);
+  padding: var(--dl-space-space-halfunit) var(--dl-space-space-unit);
+  border-radius: var(--dl-radius-radius-radius4);
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.toastContainer strong {
+  color: var(--dl-color-accent-500);
+}
+
+.textLink {
+  color: var(--dl-color-primary-500);
+  text-decoration: none;
+  background-image: linear-gradient(120deg, var(--dl-color-primary-500), var(--dl-color-accent-500));
+  background-size: 100% 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size var(--transition-speed);
+}
+
+.textLink:hover {
+  background-size: 100% 100%;
+  color: var(--dl-color-gray-white);
+}
+
+.arrowIcon {
+  display: inline-block;
+  margin-left: 0.5em;
+  width: 1em;
+  height: 1em;
+  border: solid var(--dl-color-gray-white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.arrowIcon:hover {
+  border-color: var(--dl-color-primary-500);
+}
+
